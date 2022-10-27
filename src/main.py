@@ -25,6 +25,7 @@ listaDeBusquedas = [
 
 
 for search in listaDeBusquedas:
+  gis = GoogleImagesSearch('AIzaSyA2uvjsmG_XSG-5NmneCvZ7IRnh5Ke4tXA', '52ed765d7c57849b7', progressbar_fn=my_progressbar)
   _search_params = {
       'q': search,
       'num': 100,
