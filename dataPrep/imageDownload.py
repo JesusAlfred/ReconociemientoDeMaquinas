@@ -9,7 +9,7 @@ def my_progressbar(url, progress):
     print(url[:10] + ' ' + str(progress) + '%')
 
 
-dir = './../img/'
+dir = './img/'
 try:
     os.mkdir(dir)
 except Exception as e:
@@ -42,13 +42,6 @@ for search in listaDeBusquedas:
     gis.search(search_params=_search_params)
 
     data = gis.results()
-    file = open('./datos'+search+'.pc', 'wb')
-    pickle.dump(data, file)
-    file.close()
-
-    file = open('./datos'+search+'.pc', 'rb')
-    data = pickle.load(file)
-    file.close()
 
     for image in data:
         print(image)
