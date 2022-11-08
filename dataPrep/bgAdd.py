@@ -8,6 +8,12 @@ bgDir = "./BackgroundDir"
 
 newSize = (500, 500)
 
+def transparent_bg_square(img):
+    #return a white-background-color image having the img in exact center
+    size = tuple(int(1.5 * elem) for elem in img.size)
+    layer = Image.new('RGBA', size, (0,0,0,0))
+    layer.paste(img, tuple(map(lambda x:int((x[0]-x[1])/2), zip(size, img.size))))
+    return layer
 
 try:
   os.mkdir(outputDir)
@@ -26,6 +32,7 @@ for bg in BgImgs:
       imgDir = inputDir + "/" + dir + "/" + f
       foreground = Image.open(imgDir)
       
+      foreground = transparent_bg_square(foreground)
       foreground = foreground.resize(newSize)
       #combine foreground and background
       background = background.convert("RGBA")
