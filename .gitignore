@@ -4,3 +4,5 @@ Lib
 __pycache__
 build
 img
+pyvenv.cfg
+ImgWithBackground
