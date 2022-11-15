@@ -6,3 +6,4 @@ build
 img
 pyvenv.cfg
 ImgWithBackground
+share/
